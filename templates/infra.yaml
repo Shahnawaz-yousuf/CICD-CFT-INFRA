@@ -1,4 +1,4 @@
-## --- Cloud Infra Creation via CICD CFT Template ####
+### --- Cloud Infra Creation via CICD CFT Template ####
 
 AWSTemplateFormatVersion: "2010-09-09"
 Description: Deploy basic infrastructure using CloudFormation
