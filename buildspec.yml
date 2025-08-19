@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+    commands:
+      - echo Installing AWS CLI...
+      - pip install --upgrade awscli
+
+  build:
+    commands:
+      - echo "Deploying CloudFormation stack..."
+      - aws cloudformation deploy \
+          --template-file templates/infra.yaml \
+          --stack-name my-cft-infra \
+          --capabilities CAPABILITY_NAMED_IAM \
+          --region us-east-1
+
+artifacts:
+  files:
+    - templates/infra.yaml
